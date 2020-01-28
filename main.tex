@@ -1,0 +1,52 @@
+\documentclass[a4paper, 12pt]{report}
+
+% Meta
+%\title{Casual Gamings vedtekter}
+%\author{Casual Gaming}
+%\date{1. januar 1970}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{titlesec}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{lineno}
+
+% Page numbers
+% FIXME "X/Y" instead of "X"
+%\pagestyle{fancy}
+%\cfoot{\thepage\ of \pageref{LastPage}}
+
+% Default font
+\renewcommand{\familydefault}{\sfdefault}
+
+% Chapter header formatting
+\titleformat{\chapter}[block]
+    {\rmfamily\LARGE\bfseries}{\thechapter}{1em}{\LARGE}
+\titlespacing*{\chapter}{0pt}{-20pt}{10pt}
+
+% Section header formatting
+\titleformat{\section}[block]
+    {\rmfamily\Large\bfseries}{\thesection}{1em}{\Large}
+\titlespacing*{\section}{0pt}{20pt}{5pt}
+
+% Subsection header formatting
+\titleformat{\subsection}[block]
+    {\rmfamily\large\bfseries}{\thesubsection}{1em}{\large}
+\titlespacing*{\subsection}{0pt}{10pt}{5pt}
+
+% Disable paragraph indentation
+\setlength\parindent{0pt}
+
+% Document
+\begin{document}
+\include{fremside}
+\include{innholdsfortegnelse}
+\include{formaal-og-medlemskap}
+\include{aarsmoetet}
+\include{organisasjonsstruktur}
+\include{diverse}
+\end{document}
