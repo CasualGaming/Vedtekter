@@ -15,6 +15,7 @@
 \usepackage{graphicx}
 \usepackage{lineno}
 \usepackage{nicefrac}
+\usepackage[shortlabels]{enumitem}
 
 % Page numbers
 % FIXME "X/Y" instead of "X"
@@ -25,29 +26,43 @@
 \renewcommand{\familydefault}{\sfdefault}
 
 % Chapter header formatting
-\titleformat{\chapter}[block]
-    {\rmfamily\LARGE\bfseries}{\thechapter}{1em}{\LARGE}
-\titlespacing*{\chapter}{0pt}{-20pt}{10pt}
+\titleformat{\chapter}[block]{\rmfamily\LARGE\bfseries}{\thechapter}{1em}{\LARGE}
+\titlespacing*{\chapter}{0pt}{50pt}{5pt}
+% Use this command to fix top padding on chapters on new pages
+\newcommand{\fixfirstchapterspacing}{\vspace*{-60pt}}
+% Use this command to fix spacing for chapter titles with no text
+\newcommand{\emptychapterspacing}{\vspace{1em}}
 
 % Section header formatting
-\titleformat{\section}[block]
-    {\rmfamily\Large\bfseries}{\thesection}{1em}{\Large}
+\titleformat{\section}[block]{\rmfamily\large\bfseries}{\thesection}{1em}{\large}
 \titlespacing*{\section}{0pt}{20pt}{5pt}
+% Use this command to fix spacing for section titles with no text
+\newcommand{\emptysectionspacing}{\vspace{0.5em}}
 
 % Subsection header formatting
-\titleformat{\subsection}[block]
-    {\rmfamily\large\bfseries}{\thesubsection}{1em}{\large}
-\titlespacing*{\subsection}{0pt}{10pt}{5pt}
+\titleformat{\subsection}[block]{\rmfamily\normalsize\bfseries}{\thesubsection}{1em}{\normalsize}
+\titlespacing*{\subsection}{0pt}{20pt}{5pt}
 
 % Disable paragraph indentation
 \setlength\parindent{0pt}
 
+% Remove page clear between chapters
+\renewcommand{\cleardoublepage}{\par}
+\renewcommand{\clearpage}{\par}
+
+% Remove spacing between list items
+\setlist[enumerate]{itemsep=0mm}
+
 % Document
 \begin{document}
-\include{innhold/0-fremside}
-\include{innhold/0-innholdsfortegnelse}
-\include{innhold/1-formaal-og-medlemskap}
-\include{innhold/2-aarsmoetet}
-\include{innhold/3-organisasjonsstruktur}
-\include{innhold/4-diverse}
+\input{innhold/0-fremside}
+\fixfirstchapterspacing
+\input{innhold/0-innholdsfortegnelse}
+\newpage
+\fixfirstchapterspacing
+\input{innhold/1-formaal-og-medlemskap}
+\input{innhold/2-aarsmoetet}
+\input{innhold/3-styret}
+\input{innhold/4-crewet}
+\input{innhold/5-diverse}
 \end{document}
