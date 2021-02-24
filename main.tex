@@ -47,6 +47,7 @@
 \setlength\parindent{0pt}
 
 % Remove page clear between chapters
+% This may cause the last page to get cut, so add it explicitly with "\newpage"
 \renewcommand{\cleardoublepage}{\par}
 \renewcommand{\clearpage}{\par}
 
@@ -65,4 +66,5 @@
 \input{innhold/3-styret}
 \input{innhold/4-crewet}
 \input{innhold/5-diverse}
+\newpage
 \end{document}
